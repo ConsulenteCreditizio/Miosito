@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ConsulenzaChiara - Consulenza Creditizia & Noleggio Auto a Lungo Termine</title>
+    <title>ConsulenzaChiara - Massimo Macis - Soluzioni Creditizie & Noleggio Auto</title>
     <style>
         * {
             margin: 0;
@@ -37,8 +37,22 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
+            letter-spacing: -2px;
+        }
+
+        .logo-m {
+            display: inline-block;
+            position: relative;
+        }
+
+        .logo-m::after {
+            content: 'M';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            font-size: 0.9em;
         }
 
         .nav-links {
@@ -108,6 +122,54 @@
             color: #1e3c72;
         }
 
+        .chi-sono {
+            background: white;
+        }
+
+        .chi-sono-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .profile-image {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .chi-sono-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .chi-sono-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .chi-sono-list {
+            margin: 2rem 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .chi-sono-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .chi-sono-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
         .services {
             background: #f8f9fa;
         }
@@ -141,8 +203,54 @@
             font-size: 1.5rem;
         }
 
-        .benefits {
+        .mutui {
             background: white;
+        }
+
+        .mutui-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .mutuo-card {
+            background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+
+        .mutuo-card:hover {
+            transform: scale(1.05);
+        }
+
+        .mutuo-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .mutuo-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mutuo-card li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .mutuo-card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+        }
+
+        .benefits {
+            background: #f8f9fa;
         }
 
         .benefits-list {
@@ -154,7 +262,7 @@
         .benefit-item {
             padding: 1.5rem;
             border-left: 4px solid #667eea;
-            background: #f8f9fa;
+            background: white;
             border-radius: 5px;
         }
 
@@ -185,6 +293,85 @@
         .contact-icon {
             font-size: 2.5rem;
             margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .social-btn:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-3px);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .partners {
+            background: #f8f9fa;
+            padding: 3rem 0;
+        }
+
+        .partners-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .partner-link {
+            padding: 1rem 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-decoration: none;
+            color: #1e3c72;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .partner-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
 
         .footer {
@@ -222,17 +409,28 @@
             .logo {
                 font-size: 1.2rem;
             }
+
+            .chi-sono-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-image {
+                max-width: 250px;
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="nav-container">
-            <div class="logo">💼 ConsulenzaChiara</div>
+            <div class="logo"><span class="logo-m">M</span> ConsulenzaChiara</div>
             <nav>
                 <ul class="nav-links">
+                    <li><a href="#chisono">Chi Sono</a></li>
                     <li><a href="#servizi">Servizi</a></li>
-                    <li><a href="#vantaggi">Vantaggi</a></li>
+                    <li><a href="#mutui">Mutui</a></li>
                     <li><a href="#contatti">Contatti</a></li>
                 </ul>
             </nav>
@@ -240,29 +438,126 @@
     </header>
 
     <section class="hero">
-        <h1>Soluzioni Finanziarie e Mobilità Su Misura</h1>
-        <p>Consulenza creditizia personalizzata e noleggio auto a lungo termine</p>
+        <h1>Soluzioni Creditizie e Mobilità Su Misura</h1>
+        <p>Consulente Creditizio & Noleggio Auto a Lungo Termine - Massimo Macis</p>
         <a href="#contatti" class="cta-button">Richiedi Consulenza Gratuita</a>
+    </section>
+
+    <section id="chisono" class="chi-sono">
+        <div class="container">
+            <h2 class="section-title">Chi Sono</h2>
+            <div class="chi-sono-content">
+                <img src="profilo-massimo.jpg" alt="Massimo Macis" class="profile-image">
+                <div class="chi-sono-text">
+                    <p><strong>Da oltre 20 anni</strong> aiuto famiglie, lavoratori e pensionati ad accedere a:</p>
+                    <ul class="chi-sono-list">
+                        <li><strong>Cessione del Quinto</strong></li>
+                        <li><strong>Anticipo TFS</strong></li>
+                        <li><strong>Prestiti personali su misura</strong> e aperture di conto corrente</li>
+                        <li><strong>Mutui</strong> per acquisto casa, ristrutturazione e green</li>
+                    </ul>
+                    <p>Inoltre offro consulenza nel settore <strong>noleggio auto a lungo termine</strong>, con soluzioni vantaggiose:</p>
+                    <ul class="chi-sono-list">
+                        <li>Per <strong>privati e aziende</strong> anche senza anticipo</li>
+                        <li>Canoni mensili chiari e <strong>tutto incluso</strong> (assistenza, assicurazione, manutenzione e tanto altro)</li>
+                    </ul>
+                    <p style="margin-top: 2rem; font-weight: 600; color: #1e3c72; font-size: 1.15rem;">Il mio obiettivo è offrirti un servizio affidabile e personalizzato, con trasparenza e completamente gratuito.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="servizi" class="services">
         <div class="container">
-            <h2 class="section-title">I Nostri Servizi</h2>
+            <h2 class="section-title">I Miei Servizi</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">💳</div>
-                    <h3>Consulenza Creditizia</h3>
-                    <p>Ti aiutiamo a trovare il finanziamento più adatto alle tue esigenze. Analisi gratuita della tua situazione e supporto completo nella richiesta di credito.</p>
+                    <h3>Cessione del Quinto</h3>
+                    <p>Prestiti per dipendenti pubblici e statali (max 50 anni) con rate trattenute dallo stipendio o pensione. Durata 120 mesi.</p>
+                    <p style="margin-top: 1rem; padding: 1rem; background: #f0f8ff; border-radius: 8px; font-weight: 600;">
+                        <strong style="color: #00b09b;">Campagna Autunno 2025:</strong><br>
+                        TAN 4,60% • TAEG 4,70%<br>
+                        Esempio: 24.010€ in 120 rate da 250€
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Anticipo TFS</h3>
+                    <p>Accedi subito alla tua liquidazione senza attendere. Soluzione ideale per chi va in pensione e ha bisogno di liquidità immediata.</p>
+                    <p style="margin-top: 1rem; padding: 1rem; background: #f0f8ff; border-radius: 8px; font-weight: 600;">
+                        <strong style="color: #00b09b;">Anticipo Trattamento Fine Servizio:</strong><br>
+                        TAN Fisso 5,00% - Senza spese<br><br>
+                        <span style="font-size: 0.9rem; font-weight: normal;">
+                        Come funziona: L'INPS trattiene il 5% (Haircut) dall'importo dovuto.<br>
+                        Esempio: TFS 100.000€ → L'INPS trattiene 5.000€<br>
+                        Il calcolo si fa su 95.000€ → Anticipo netto 89.018€
+                        </span>
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Prestiti Personali</h3>
+                    <p>Finanziamenti su misura per ogni esigenza: ristrutturazioni, spese impreviste, progetti personali. Tassi competitivi e trasparenza totale.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Mutui BNL</h3>
+                    <p>Mutui per acquisto prima casa, ristrutturazione, mutui green e giovani under 36. Fino all'80% del valore dell'immobile con tassi competitivi.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🚗</div>
                     <h3>Noleggio a Lungo Termine</h3>
-                    <p>Auto nuove senza pensieri: assicurazione, manutenzione e assistenza incluse. Canone fisso mensile e massima flessibilità.</p>
+                    <p>Auto nuove per privati e aziende, anche senza anticipo. Canone mensile fisso con tutto incluso: assicurazione, manutenzione, assistenza stradale.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Analisi Personalizzata</h3>
-                    <p>Studio approfondito della tua situazione finanziaria per proporti le soluzioni più vantaggiose e sostenibili nel tempo.</p>
+                    <div class="service-icon">🏦</div>
+                    <h3>Apertura Conto Corrente</h3>
+                    <p>Ti aiuto a scegliere e aprire il conto corrente più adatto alle tue esigenze, con le migliori condizioni del mercato BNL.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mutui" class="mutui">
+        <div class="container">
+            <h2 class="section-title">Mutui BNL - Soluzioni per Ogni Esigenza</h2>
+            <div class="mutui-grid">
+                <div class="mutuo-card">
+                    <h3>🏡 Mutuo in Campagna</h3>
+                    <ul>
+                        <li>Fino all'80% del valore dell'immobile</li>
+                        <li>Tasso Fisso e Variabile</li>
+                        <li>Durata da 10 a 30 anni</li>
+                        <li>Per acquisto prima casa</li>
+                    </ul>
+                </div>
+                <div class="mutuo-card">
+                    <h3>🌱 Mutuo Green</h3>
+                    <ul>
+                        <li>Per acquisto casa classe A o B</li>
+                        <li>Fino all'80% del valore</li>
+                        <li>Tasso Fisso agevolato</li>
+                        <li>Durata da 10 a 30 anni</li>
+                    </ul>
+                </div>
+                <div class="mutuo-card">
+                    <h3>👨‍🎓 Mutuo Giovani Under 36</h3>
+                    <ul>
+                        <li>Dedicato agli under 36</li>
+                        <li>Fino all'80% del valore</li>
+                        <li>Tasso Fisso o Variabile</li>
+                        <li>Sconto del 20% sulle commissioni</li>
+                    </ul>
+                </div>
+                <div class="mutuo-card">
+                    <h3>🔨 Mutuo Ristrutturazione</h3>
+                    <ul>
+                        <li>Per lavori di manutenzione</li>
+                        <li>Fino al 30% del valore immobile</li>
+                        <li>Massimo 150.000€</li>
+                        <li>Certificazione energetica inclusa</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -273,28 +568,28 @@
             <h2 class="section-title">Perché Scegliere ConsulenzaChiara</h2>
             <div class="benefits-list">
                 <div class="benefit-item">
-                    <h4>✓ Esperienza e Professionalità</h4>
-                    <p>Anni di esperienza nel settore finanziario e automotive</p>
+                    <h4>✓ Esperienza Ventennale</h4>
+                    <p>Oltre 20 anni nel settore finanziario e automotive</p>
                 </div>
                 <div class="benefit-item">
                     <h4>✓ Consulenza Gratuita</h4>
-                    <p>Prima consulenza sempre senza impegno</p>
+                    <p>Primo appuntamento sempre senza impegno</p>
                 </div>
                 <div class="benefit-item">
-                    <h4>✓ Soluzioni Su Misura</h4>
-                    <p>Ogni cliente ha esigenze diverse, noi le ascoltiamo</p>
+                    <h4>✓ Partner Affidabili</h4>
+                    <p>Collaboro con BNL Gruppo BNP Paribas e Arval</p>
                 </div>
                 <div class="benefit-item">
-                    <h4>✓ Assistenza Continua</h4>
-                    <p>Ti seguiamo in ogni fase del processo</p>
+                    <h4>✓ Soluzioni Personalizzate</h4>
+                    <p>Ogni cliente ha esigenze diverse, le ascolto tutte</p>
                 </div>
                 <div class="benefit-item">
                     <h4>✓ Massima Trasparenza</h4>
-                    <p>Nessun costo nascosto, tutto chiaro fin dall'inizio</p>
+                    <p>Nessun costo nascosto, tutto chiaro dall'inizio</p>
                 </div>
                 <div class="benefit-item">
-                    <h4>✓ Risparmio Garantito</h4>
-                    <p>Troviamo le migliori offerte sul mercato</p>
+                    <h4>✓ Assistenza Continua</h4>
+                    <p>Ti seguo in ogni fase del processo</p>
                 </div>
             </div>
         </div>
@@ -302,31 +597,64 @@
 
     <section id="contatti" class="contact">
         <div class="container">
-            <h2 class="section-title" style="color: white;">Contattaci</h2>
-            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">Siamo a tua disposizione per una consulenza gratuita e senza impegno</p>
+            <h2 class="section-title" style="color: white;">Contattami</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">Sono a tua disposizione per una consulenza gratuita e senza impegno</p>
             <div class="contact-grid">
                 <div class="contact-item">
                     <div class="contact-icon">📱</div>
-                    <h3>Telefono</h3>
-                    <p>+39 XXX XXX XXXX</p>
+                    <h3>Telefono / WhatsApp</h3>
+                    <p><a href="tel:+393519442823" style="color: white; text-decoration: none;">+39 351 944 2823</a></p>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">✉️</div>
                     <h3>Email</h3>
-                    <p>info@consulenzachiara.it</p>
+                    <p><a href="mailto:massimo.macis@fb.bnpparibas.com" style="color: white; text-decoration: none;">massimo.macis@fb.bnpparibas.com</a></p>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">📍</div>
-                    <h3>Zona</h3>
-                    <p>Lombardia</p>
+                    <h3>Sede</h3>
+                    <p><a href="https://www.google.com/maps/place/Piazza+Italia,+27,+09134+Cagliari+CA/@39.2461799,9.1269135,17z" target="_blank" style="color: white; text-decoration: none;">Piazza Italia, 27<br>09134 Cagliari (CA)</a></p>
                 </div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/massimomacis72?locale=it_IT" target="_blank" class="social-btn">
+                    📘 Facebook
+                </a>
+                <a href="https://www.instagram.com/massimomacis72/" target="_blank" class="social-btn">
+                    📸 Instagram
+                </a>
+                <a href="https://www.linkedin.com/in/massimo-macis-0ab6641a4/" target="_blank" class="social-btn">
+                    💼 LinkedIn
+                </a>
+                <a href="https://wa.me/393519442823" target="_blank" class="social-btn">
+                    💬 WhatsApp
+                </a>
             </div>
         </div>
     </section>
 
+    <section class="partners">
+        <div class="container">
+            <h2 class="section-title">I Miei Partner</h2>
+            <div class="partners-logos">
+                <a href="https://www.bnl.it" target="_blank" class="partner-link">
+                    🏦 BNL Gruppo BNP Paribas
+                </a>
+                <a href="https://www.arval.it" target="_blank" class="partner-link">
+                    🚗 Arval
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/393519442823" target="_blank" class="whatsapp-float" title="Contattami su WhatsApp">
+        💬
+    </a>
+
     <footer class="footer">
-        <p>&copy; 2025 ConsulenzaChiara - Consulenza Creditizia & Noleggio Auto. Tutti i diritti riservati.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">P.IVA: XXXXXXXXXX</p>
+        <p>&copy; 2025 ConsulenzaChiara - Massimo Macis</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Agente in Attività Finanziaria n. A17456</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Piazza Italia, 27 - 09134 Cagliari (CA)</p>
     </footer>
 </body>
 </html>
