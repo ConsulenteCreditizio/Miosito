@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsulenzaChiara - Consulenza Creditizia & Noleggio Auto a Lungo Termine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: #1e3c72;
+        }
+
+        .services {
+            background: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .benefits {
+            background: white;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            padding: 1.5rem;
+            border-left: 4px solid #667eea;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .benefit-item h4 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">💼 ConsulenzaChiara</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#servizi">Servizi</a></li>
+                    <li><a href="#vantaggi">Vantaggi</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Soluzioni Finanziarie e Mobilità Su Misura</h1>
+        <p>Consulenza creditizia personalizzata e noleggio auto a lungo termine</p>
+        <a href="#contatti" class="cta-button">Richiedi Consulenza Gratuita</a>
+    </section>
+
+    <section id="servizi" class="services">
+        <div class="container">
+            <h2 class="section-title">I Nostri Servizi</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💳</div>
+                    <h3>Consulenza Creditizia</h3>
+                    <p>Ti aiutiamo a trovare il finanziamento più adatto alle tue esigenze. Analisi gratuita della tua situazione e supporto completo nella richiesta di credito.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚗</div>
+                    <h3>Noleggio a Lungo Termine</h3>
+                    <p>Auto nuove senza pensieri: assicurazione, manutenzione e assistenza incluse. Canone fisso mensile e massima flessibilità.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Analisi Personalizzata</h3>
+                    <p>Studio approfondito della tua situazione finanziaria per proporti le soluzioni più vantaggiose e sostenibili nel tempo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vantaggi" class="benefits">
+        <div class="container">
+            <h2 class="section-title">Perché Scegliere ConsulenzaChiara</h2>
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <h4>✓ Esperienza e Professionalità</h4>
+                    <p>Anni di esperienza nel settore finanziario e automotive</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>✓ Consulenza Gratuita</h4>
+                    <p>Prima consulenza sempre senza impegno</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>✓ Soluzioni Su Misura</h4>
+                    <p>Ogni cliente ha esigenze diverse, noi le ascoltiamo</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>✓ Assistenza Continua</h4>
+                    <p>Ti seguiamo in ogni fase del processo</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>✓ Massima Trasparenza</h4>
+                    <p>Nessun costo nascosto, tutto chiaro fin dall'inizio</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>✓ Risparmio Garantito</h4>
+                    <p>Troviamo le migliori offerte sul mercato</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatti" class="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Contattaci</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">Siamo a tua disposizione per una consulenza gratuita e senza impegno</p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h3>Telefono</h3>
+                    <p>+39 XXX XXX XXXX</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p>info@consulenzachiara.it</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <h3>Zona</h3>
+                    <p>Lombardia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 ConsulenzaChiara - Consulenza Creditizia & Noleggio Auto. Tutti i diritti riservati.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">P.IVA: XXXXXXXXXX</p>
+    </footer>
+</body>
+</html>
