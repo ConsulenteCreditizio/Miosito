@@ -37,9 +37,14 @@
             align-items: center;
         }
 
-        .logo-img {
-            height: 40px; /* Altezza del logo immagine */
-            display: block;
+        /* Nuovo Stile per il Logo (Testo/Placeholder) */
+        .logo-placeholder {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            border: 2px solid white;
+            padding: 5px 10px;
+            border-radius: 5px;
             margin-right: auto;
         }
 
@@ -127,6 +132,14 @@
             width: 100%;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            /* Sostituzione immagine profilo con placeholder */
+            background: #ccc;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: bold;
         }
 
         .chi-sono-text {
@@ -185,7 +198,7 @@
         .service-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
-            height: 40px; /* Fixed height for consistent icon/image sizing */
+            height: 40px; 
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -226,13 +239,22 @@
             font-weight: bold;
         }
         
-        .cqs-flyer {
+        .cqs-flyer-placeholder {
             width: 100%;
             max-width: 300px;
+            height: 200px;
             margin: 1.5rem auto 0;
             display: block;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #495057;
+            font-weight: bold;
+            border: 2px dashed #adb5bd;
         }
         /* Fine Stili Cessione del Quinto */
 
@@ -450,7 +472,7 @@
                 gap: 1rem;
             }
             
-            .logo-img {
+            .logo-placeholder {
                 margin: 0 auto;
             }
 
@@ -462,6 +484,7 @@
             .profile-image {
                 max-width: 250px;
                 margin: 0 auto;
+                height: 250px;
             }
         }
     </style>
@@ -469,7 +492,7 @@
 <body>
     <header class="header">
         <div class="nav-container">
-            <img src="uploaded:Massimo Macis (8).png-d739e448-45ed-427c-bf85-67efdb317c4b" alt="Massimo Macis Consulenza Chiara Logo" class="logo-img">
+            <div class="logo-placeholder">ConsulenzaChiara</div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#chisono">Chi Sono</a></li>
@@ -491,7 +514,9 @@
         <div class="container">
             <h2 class="section-title">Chi Sono</h2>
             <div class="chi-sono-content">
-                <img src="profilo-massimo.jpg" alt="Massimo Macis" class="profile-image">
+                <div class="profile-image">
+                    Placeholder Foto Profilo Massimo Macis
+                </div>
                 <div class="chi-sono-text">
                     <p><strong>Da oltre 20 anni</strong> aiuto famiglie, lavoratori e pensionati ad accedere a:</p>
                     <ul class="chi-sono-list">
@@ -518,10 +543,10 @@
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <img src="uploaded:logo cessione del quinto.jpg-fd39cf01-e1fa-4de6-ba8d-5024658ba4f1" alt="Icona Cessione del Quinto" style="height: 100%; width: auto;">
+                        💶
                     </div>
                     <h3>Cessione del Quinto per Dipendenti e Pensionati</h3>
-                    <p>La cessione del quinto è la soluzione ideale per ottenere **liquidità** in modo semplice, sicuro e conveniente. È un prestito personale dedicato a dipendenti pubblici e privati e a pensionati, con la comodità che la rata viene trattenuta direttamente dalla busta paga o dalla pensione.</p>
+                    <p>La cessione del quinto è la soluzione ideale per ottenere **liquidità** in modo semplice, sicuro e conveniente. È un prestito personale dedicato a **dipendenti pubblici e privati** e a **pensionati**, con la comodità che la rata viene trattenuta direttamente dalla busta paga o dalla pensione.</p>
 
                     <div class="cqs-details">
                         <h4>Perché scegliere la Cessione del Quinto:</h4>
@@ -547,9 +572,11 @@
                         </ul>
                     </div>
                     
-                    <p style="text-align: center; margin-top: 1.5rem; font-weight: 600;">Richiedi subito la tua consulenza gratuita!</p>
+                    <p style="text-align: center; margin-top: 1.5rem; font-weight: 600;">Richiedi subito la tua consulenza gratuita: valuteremo insieme la soluzione più adatta alle tue necessità, con massima trasparenza e supporto professionale in ogni fase.</p>
                     
-                    <img src="uploaded:202509 Flyer Campagna CQS D'Autunno 2025_page-0001.jpg-dd54fc60-96ba-4dcb-b205-aa447538b3d" alt="Campagna Cessione del Quinto D'Autunno 2025" class="cqs-flyer">
+                    <div class="cqs-flyer-placeholder">
+                        Placeholder Locandina Promozionale CQS
+                    </div>
                     
                 </div>
                 <div class="service-card">
@@ -561,8 +588,8 @@
                         TAN Fisso 5,00% - Senza spese<br><br>
                         <span style="font-size: 0.9rem; font-weight: normal;">
                         Come funziona: L'INPS trattiene il 5% (Haircut) dall'importo dovuto.<br>
-                        Esempio: TFS 100.000&euro; &rarr; L'INPS trattiene 5.000&euro;<br>
-                        Il calcolo si fa su 95.000&euro; &rarr; Anticipo netto 89.018&euro;
+                        Esempio: TFS 100.000€ → L'INPS trattiene 5.000€<br>
+                        Il calcolo si fa su 95.000€ → Anticipo netto 89.018€
                         </span>
                     </p>
                 </div>
@@ -613,7 +640,7 @@
                     </ul>
                 </div>
                 <div class="mutuo-card">
-                    <h3>👨&amp;zwj;🎓 Mutuo Giovani Under 36</h3>
+                    <h3>👨‍🎓 Mutuo Giovani Under 36</h3>
                     <ul>
                         <li>Dedicato agli under 36</li>
                         <li>Fino all'80% del valore</li>
@@ -626,7 +653,7 @@
                     <ul>
                         <li>Per lavori di manutenzione</li>
                         <li>Fino al 30% del valore immobile</li>
-                        <li>Massimo 150.000&euro;</li>
+                        <li>Massimo 150.000€</li>
                         <li>Certificazione energetica inclusa</li>
                     </ul>
                 </div>
@@ -723,7 +750,7 @@
     </a>
 
     <footer class="footer">
-        <p>&copy; 2025 ConsulenzaChiara - Massimo Macis</p>
+        <p>© 2025 ConsulenzaChiara - Massimo Macis</p>
         <p style="margin-top: 0.5rem; font-size: 0.9rem;">Agente in Attività Finanziaria n. A17456</p>
         <p style="margin-top: 0.5rem; font-size: 0.9rem;">Piazza Italia, 27 - 09134 Cagliari (CA)</p>
     </footer>
@@ -810,7 +837,7 @@
                 });
 
                 const data = await response.json();
-                const reply = data.choices?.[0]?.message?.content || "Mi dispiace, non riesco a rispondere al momento.";
+                const reply = data.choices?.[0]?.message?.content || "Mi dispiaccio, non riesco a rispondere al momento.";
                 messagesDiv.innerHTML += `<div style="margin-top:8px;color:#1e3c72;"><strong>Massimo Macis:</strong> ${reply}</div>`;
                 messagesDiv.scrollTop = messagesDiv.scrollHeight;
             } catch (error) {
