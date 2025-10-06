@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsulenzaChiara - Massimo Macis - Soluzioni Creditizie & Noleggio Auto</title>
+    <style>
+        /* --- Reset & Font --- */
+        * {margin:0; padding:0; box-sizing:border-box;}
+        body {font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; color:#333;}
+        
+        /* --- Header --- */
+        .header {
+            background: linear-gradient(135deg,#1e3c72 0%,#2a5298 100%);
+            color:white;
+            padding:1rem 0;
+            position: sticky;
+            top:0;
+            z-index:100;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+        }
+        .nav-container {max-width:1200px; margin:0 auto; padding:0 20px; display:flex; justify-content:space-between; align-items:center;}
+        .logo-img {height:40px;}
+        .nav-links {display:flex; gap:2rem; list-style:none;}
+        .nav-links a {color:white; text-decoration:none; transition:opacity 0.3s;}
+        .nav-links a:hover {opacity:0.8;}
+
+        /* --- Hero --- */
+        .hero {background: linear-gradient(135deg,#667eea 0%,#764ba2 100%); color:white; padding:100px 20px; text-align:center;}
+        .hero h1 {font-size:2.5rem; margin-bottom:1rem; animation:fadeInUp 1s;}
+        .hero p {font-size:1.3rem; margin-bottom:2rem; opacity:0.95;}
+        .cta-button {
+            background:white; color:#667eea; padding:15px 40px; border:none; border-radius:50px;
+            font-size:1.1rem; font-weight:bold; cursor:pointer; transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration:none; display:inline-block;
+        }
+        .cta-button:hover {transform:translateY(-3px); box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+
+        /* --- Container & Section Titles --- */
+        .container {max-width:1200px; margin:0 auto; padding:60px 20px;}
+        .section-title {text-align:center; font-size:2.2rem; margin-bottom:3rem; color:#1e3c72;}
+
+        /* --- Chi Sono --- */
+        .chi-sono-content {display:grid; grid-template-columns:300px 1fr; gap:3rem; align-items:center; max-width:1000px; margin:0 auto;}
+        .profile-image {width:100%; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.2);}
+        .chi-sono-text {font-size:1.1rem; line-height:1.8;}
+        .chi-sono-list {margin:2rem 0; list-style:none; padding-left:0;}
+        .chi-sono-list li {margin-bottom:0.8rem; padding-left:1.5rem; position:relative;}
+        .chi-sono-list li:before {content:"✓"; position:absolute; left:0; color:#667eea; font-weight:bold;}
+
+        /* --- Services --- */
+        .services-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem;}
+        .service-card {background:white; padding:2rem; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.1); transition:transform 0.3s; display:flex; flex-direction:column;}
+        .service-card:hover {transform:translateY(-10px);}
+        .service-icon {font-size:3rem; margin-bottom:1rem; height:40px; display:flex; align-items:center; justify-content:flex-start;}
+        .service-card h3 {color:#1e3c72; margin-bottom:1rem; font-size:1.5rem;}
+        .cqs-details {margin-top:1rem; padding:1rem; background:#f0f8ff; border-radius:8px;}
+        .cqs-details h4 {color:#1e3c72; margin-bottom:0.5rem; font-size:1.2rem;}
+        .cqs-benefits {list-style:none; padding-left:0; margin-bottom:1rem;}
+        .cqs-benefits li {margin-bottom:0.5rem; padding-left:1.5rem; position:relative; font-size:0.95rem;}
+        .cqs-benefits li:before {content:"•"; position:absolute; left:0; color:#667eea; font-weight:bold;}
+        .cqs-flyer {width:100%; max-width:300px; margin:1.5rem auto 0; display:block; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.15);}
+
+        /* --- Mutui --- */
+        .mutui-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; margin-top:2rem;}
+        .mutuo-card {background:linear-gradient(135deg,#00b09b 0%,#96c93d 100%); color:white; padding:2rem; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.15); transition:transform 0.3s;}
+        .mutuo-card:hover {transform:scale(1.05);}
+        .mutuo-card h3 {font-size:1.5rem; margin-bottom:1rem;}
+        .mutuo-card ul {list-style:none; padding:0;}
+        .mutuo-card li {margin-bottom:0.5rem; padding-left:1.2rem; position:relative;}
+        .mutuo-card li:before {content:"•"; position:absolute; left:0;}
+
+        /* --- Benefits --- */
+        .benefits-list {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem;}
+        .benefit-item {padding:1.5rem; border-left:4px solid #667eea; background:white; border-radius:5px;}
+        .benefit-item h4 {color:#1e3c72; margin-bottom:0.5rem;}
+
+        /* --- Contact --- */
+        .contact-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem; margin-top:2rem;}
+        .contact-item {text-align:center; padding:2rem; background:rgba(255,255,255,0.1); border-radius:10px;}
+        .contact-icon {font-size:2.5rem; margin-bottom:1rem;}
+        .social-links {display:flex; justify-content:center; gap:1.5rem; margin-top:2rem; flex-wrap:wrap;}
+        .social-btn {display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,255,255,0.15); color:white; padding:0.8rem 1.5rem; border-radius:10px; text-decoration:none; transition:all 0.3s; font-size:0.95rem;}
+        .social-btn:hover {background:rgba(255,255,255,0.25); transform:translateY(-3px);}
+        .whatsapp-float {position:fixed; bottom:20px; right:20px; background:#25D366; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2rem; box-shadow:0 4px 15px rgba(0,0,0,0.3); z-index:1000; text-decoration:none; transition: transform 0.3s;}
+        .whatsapp-float:hover {transform:scale(1.1);}
+
+        /* --- Partners --- */
+        .partners-logos {display:flex; justify-content:center; align-items:center; gap:3rem; flex-wrap:wrap;}
+        .partner-link {padding:1rem 2rem; background:white; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); transition:transform 0.3s; text-decoration:none; color:#1e3c72; font-weight:bold; font-size:1.1rem;}
+        .partner-link:hover {transform:translateY(-5px); box-shadow:0 5px 20px rgba(0,0,0,0.15);}
+
+        /* --- Footer --- */
+        .footer {background:#1a1a1a; color:white; text-align:center; padding:2rem;}
+
+        /* --- Animations --- */
+        @keyframes fadeInUp {from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);}}
+
+        /* --- Media Queries --- */
+        @media(max-width:768px){
+            .nav-links {gap:1rem; font-size:0.9rem;}
+            .hero h1 {font-size:2rem;}
+            .hero p {font-size:1.1rem;}
+            .nav-container {flex-direction:column; gap:1rem;}
+            .logo-img {margin:0 auto;}
+            .chi-sono-content {grid-template-columns:1fr; text-align:center;}
+            .profile-image {max-width:250px; margin:0 auto;}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="nav-container">
+            <img src="images/logo.jpeg" alt="Massimo Macis Consulenza Chiara Logo" class="logo-img">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#chisono">Chi Sono</a></li>
+                    <li><a href="#servizi">Servizi</a></li>
+                    <li><a href="#mutui">Mutui</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Soluzioni Creditizie e Mobilità Su Misura</h1>
+        <p>Consulente Creditizio & Noleggio Auto a Lungo Termine - Massimo Macis</p>
+        <a href="#contatti" class="cta-button">Richiedi Consulenza Gratuita</a>
+    </section>
+
+    <!-- CHI SONO -->
+    <section id="chisono" class="chi-sono">
+        <div class="container">
+            <h2 class="section-title">Chi Sono</h2>
+            <div class="chi-sono-content">
+                <img src="images/profilo-massimo.jpg" alt="Massimo Macis" class="profile-image">
+                <div class="chi-sono-text">
+                    <p><strong>Da oltre 20 anni</strong> aiuto famiglie, lavoratori e pensionati ad accedere a:</p>
+                    <ul class="chi-sono-list">
+                        <li><strong>Cessione del Quinto</strong></li>
+                        <li><strong>Anticipo TFS</strong></li>
+                        <li><strong>Prestiti personali su misura</strong> e aperture di conto corrente</li>
+                        <li><strong>Mutui</strong> per acquisto casa, ristrutturazione e green</li>
+                    </ul>
+                    <p>Inoltre offro consulenza nel settore <strong>noleggio auto a lungo termine</strong>, con soluzioni vantaggiose:</p>
+                    <ul class="chi-sono-list">
+                        <li>Per <strong>privati e aziende</strong> anche senza anticipo</li>
+                        <li>Canoni mensili chiari e <strong>tutto incluso</strong> (assistenza, assicurazione, manutenzione e tanto altro)</li>
+                    </ul>
+                    <p style="margin-top:2rem; font-weight:600; color:#1e3c72; font-size:1.15rem;">
+                        Il mio obiettivo è offrirti un servizio affidabile e personalizzato, con trasparenza e completamente gratuito.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="servizi" class="services">
+        <div class="container">
+            <h2 class="section-title">I Miei Servizi</h2>
+            <div class="services-grid">
+                <!-- Cessione del Quinto -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/logo-cessione.jpg" alt="Icona Cessione del Quinto" style="height:100%; width:auto;">
+                    </div>
+                    <h3>Cessione del Quinto per Dipendenti e Pensionati</h3>
+                    <p>La cessione del quinto è la soluzione ideale per ottenere liquidità in modo semplice, sicuro e conveniente.</p>
+                    <div class="cqs-details">
+                        <h4>Perché scegliere la Cessione del Quinto:</h4>
+                        <ul class="cqs-benefits">
+                            <li>Sicurezza e Trasparenza: la rata non supera mai un quinto dello stipendio o della pensione.</li>
+                            <li>Durata Flessibile: fino a 120 mesi.</li>
+                            <li>Accesso Flessibile: possibile anche se si hanno altri finanziamenti in corso.</li>
+                            <li>Tassi Competitivi: TAN e TAEG chiari e senza costi nascosti.</li>
+                        </ul>
+                        <h4 style="color:#00b09b;">Vantaggi per i Dipendenti:</h4>
+                        <ul class="cqs-benefits">
+                            <li>Contratto a tempo indeterminato.</li>
+                            <li>Accesso semplice tramite azienda.</li>
+                            <li>Nessuna garanzia aggiuntiva richiesta.</li>
+                        </ul>
+                        <h4 style="color:#00b09b;">Vantaggi per i Pensionati:</h4>
+                        <ul class="cqs-benefits">
+                            <li>Pensionati INPS.</li>
+                            <li>Comodità delle rate trattenute direttamente.</li>
+                            <li>Possibilità di importi significativi.</li>
+                        </ul>
+                    </div>
+                    <p style="text-align:center; margin-top:1.5rem; font-weight:600;">Richiedi subito la tua consulenza gratuita!</p>
+                    <img src="images/flyer-cqs.jpg" alt="Flyer Cessione del Quinto" class="cqs-flyer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mutui -->
+    <section id="mutui" class="mutui">
+        <div class="container">
+            <h2 class="section-title">Mutui BNL - Soluzioni per Ogni Esigenza</h2>
+            <div class="mutui-grid">
+                <div class="mutuo-card">
+                    <h3>🏡 Mutuo in Campagna</h3>
+                    <ul>
+                        <li>Fino all'80% del valore dell'immobile</li>
+                        <li>Tasso Fisso e Variabile</li>
+                        <li>Durata da 10 a 30 anni</li>
+                        <li>Per acquisto prima casa</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contatti -->
+    <section id="contatti" class="contact">
+        <div class="container">
+            <h2 class="section-title" style="color:white;">Contattami</h2>
+            <p style="text-align:center; font-size:1.2rem; margin-bottom:2rem;">Consulenza gratuita e senza impegno</p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h3>Telefono / WhatsApp</h3>
+                    <p><a href="tel:+393519442823" style="color:white;">+39 351 944 2823</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/393519442823" target="_blank" class="whatsapp-float">💬</a>
+
+    <footer class="footer">
+        <p>&copy; 2025 ConsulenzaChiara - Massimo Macis</p>
+    </footer>
+
+    <!-- CHAT AI -->
+    <script>
+        const chatButton = document.createElement("div");
+        chatButton.innerHTML = "💬 Massimo Macis";
+        Object.assign(chatButton.style,{
+            position:"fixed", bottom:"100px", right:"20px", background:"#1e3c72",
+            color:"white", padding:"12px 20px", borderRadius:"30px", cursor:"pointer",
+            boxShadow:"0 5px 20px rgba(0,0,0,0.2)", fontWeight:"bold", fontFamily:"Poppins, sans-serif", zIndex:"9999"
+        });
+        document.body.appendChild(chatButton);
+
+        const chatWindow = document.createElement("div");
+        Object.assign(chatWindow.style,{
+            position:"fixed", bottom:"160px", right:"20px", width:"320px", height:"420px",
+            background:"white", borderRadius:"15px", boxShadow:"0 5px 25px rgba(0,0,0,0.3)",
+            display:"none", flexDirection:"column", overflow:"hidden", zIndex:"10000"
+        });
+        chatWindow.innerHTML = `
+            <div style="background:#1e3c72;color:white;padding
