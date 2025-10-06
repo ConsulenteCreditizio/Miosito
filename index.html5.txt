@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsulenzaChiara - Massimo Macis - Soluzioni Creditizie & Noleggio Auto</title>
+    <style>
+        /* ---------------------- STILI GENERALI ---------------------- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        a { text-decoration: none; color: inherit; }
+
+        /* ---------------------- HEADER ---------------------- */
+        .header { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: bold; display: flex; align-items: center; gap: 0.5rem; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: white; transition: opacity 0.3s; }
+        .nav-links a:hover { opacity: 0.8; }
+
+        /* ---------------------- HERO ---------------------- */
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 100px 20px; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; animation: fadeInUp 1s; }
+        .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; }
+        .cta-button { background: white; color: #667eea; padding: 15px 40px; border-radius: 50px; font-size: 1.1rem; font-weight: bold; transition: transform 0.3s, box-shadow 0.3s; display: inline-block; }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+
+        /* ---------------------- CONTAINER ---------------------- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 3rem; color: #1e3c72; }
+
+        /* ---------------------- CHI SONO ---------------------- */
+        .chi-sono { background: white; }
+        .chi-sono-content { display: grid; grid-template-columns: 300px 1fr; gap: 3rem; align-items: center; max-width: 1000px; margin: 0 auto; }
+        .profile-image { width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .chi-sono-text { font-size: 1.1rem; line-height: 1.8; }
+        .chi-sono-text p { margin-bottom: 1.5rem; }
+        .chi-sono-list { margin: 2rem 0; list-style: none; padding-left: 0; }
+        .chi-sono-list li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
+        .chi-sono-list li:before { content: "✓"; position: absolute; left: 0; color: #667eea; font-weight: bold; }
+
+        /* ---------------------- SERVIZI ---------------------- */
+        .services { background: #f8f9fa; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .service-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-10px); }
+        .service-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .service-card h3 { color: #1e3c72; margin-bottom: 1rem; font-size: 1.5rem; }
+
+        /* ---------------------- MUTUI ---------------------- */
+        .mutui { background: white; }
+        .mutui-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .mutuo-card { background: linear-gradient(135deg, #00b09b 0%, #96c93d 100%); color: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); transition: transform 0.3s; }
+        .mutuo-card:hover { transform: scale(1.05); }
+        .mutuo-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .mutuo-card ul { list-style: none; padding: 0; }
+        .mutuo-card li { margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative; }
+        .mutuo-card li:before { content: "•"; position: absolute; left: 0; }
+
+        /* ---------------------- VANTAGGI ---------------------- */
+        .benefits { background: #f8f9fa; }
+        .benefits-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .benefit-item { padding: 1.5rem; border-left: 4px solid #667eea; background: white; border-radius: 5px; }
+        .benefit-item h4 { color: #1e3c72; margin-bottom: 0.5rem; }
+
+        /* ---------------------- CONTATTI ---------------------- */
+        .contact { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .contact-item { text-align: center; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 10px; }
+        .contact-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .social-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
+        .social-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.15); color: white; padding: 0.8rem 1.5rem; border-radius: 10px; transition: all 0.3s; font-size: 0.95rem; }
+        .social-btn:hover { background: rgba(255,255,255,0.25); transform: translateY(-3px); }
+
+        /* ---------------------- PARTNERS ---------------------- */
+        .partners { background: #f8f9fa; padding: 3rem 0; }
+        .partners-logos { display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; }
+        .partner-link { padding: 1rem 2rem; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s; font-weight: bold; font-size: 1.1rem; color: #1e3c72; }
+        .partner-link:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,0,0,0.15); }
+
+        /* ---------------------- FOOTER ---------------------- */
+        .footer { background: #1a1a1a; color: white; text-align: center; padding: 2rem; }
+
+        /* ---------------------- ANIMAZIONI ---------------------- */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ---------------------- RESPONSIVE ---------------------- */
+        @media (max-width: 768px) {
+            .nav-links { gap: 1rem; font-size: 0.9rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1.1rem; }
+            .chi-sono-content { grid-template-columns: 1fr; text-align: center; }
+            .profile-image { max-width: 250px; margin: 0 auto; }
+        }
+
+        /* ---------------------- CHATBOT ---------------------- */
+        #chatbot-btn { position: fixed; bottom: 90px; right: 20px; background: #667eea; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; cursor: pointer; z-index: 1001; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        #chatbot-panel { position: fixed; bottom: 160px; right: 20px; width: 300px; max-height: 400px; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: none; flex-direction: column; overflow: hidden; z-index: 1001; }
+        #chatbot-messages { flex: 1; padding: 1rem; overflow-y: auto; }
+        #chatbot-input { display: flex; border-top: 1px solid #ddd; }
+        #chatbot-input input { flex: 1; padding: 0.8rem; border: none; outline: none; }
+        #chatbot-input button { background: #667eea; color: white; border: none; padding: 0 1rem; cursor: pointer; }
+        .message { margin-bottom: 1rem; }
+        .message.user { text-align: right; }
+        .message.ai { text-align: left; color: #333; }
+
+        /* ---------------------- WHATSAPP ---------------------- */
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+    </style>
+</head>
+<body>
+
+    <!-- ---------------------- HEADER ---------------------- -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="Massimo Macis Logo" style="height: 50px;"> <!-- Inserisci il tuo logo qui -->
+                ConsulenzaChiara
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#chisono">Chi Sono</a></li>
+                    <li><a href="#servizi">Servizi</a></li>
+                    <li><a href="#mutui">Mutui</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ---------------------- HERO ---------------------- -->
+    <section class="hero">
+        <h1>Soluzioni Creditizie e Mobilità Su Misura</h1>
+        <p>Consulente Creditizio & Noleggio Auto a Lungo Termine - Massimo Macis</p>
+        <a href="#contatti" class="cta-button">Richiedi Consulenza Gratuita</a>
+    </section>
+
+    <!-- ---------------------- CHI SONO ---------------------- -->
+    <section id="chisono" class="chi-sono
